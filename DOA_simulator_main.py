@@ -68,7 +68,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     # 
     #-----------------------------------------------------------------
     def set_update_time(self):        
-        self.timer.setInterval(self.doubleSpinBox_simulation_update_time.value()*1000)  
+        self.timer.setInterval(int(self.doubleSpinBox_simulation_update_time.value()*1000))  
     
     def antenna_number_changed(self):
         uca_unamb_radius = 1/(2*np.sqrt(2*(1-np.cos(np.deg2rad(360/self.spinBox_noa.value())))))
